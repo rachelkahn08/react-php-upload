@@ -31,7 +31,6 @@ class Sidebar extends Component {
 		return (
 			<div className="Sidebar">
 				<nav className="Sidebar__nav">
-					<h1>Narrow By Category</h1>
 					<div className="Sidebar__navlink-container">
 						<NavLink className="Sidebar__nav--link" to='/ImageCollection'>All</NavLink>
 						<NavLink className="Sidebar__nav--link" to='/BrowseCategories'>Browse Categories</NavLink>

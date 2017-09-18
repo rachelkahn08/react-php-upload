@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import GalleryItem from './GalleryItem';
+import Subheader from './Subheader';
 
 class ImageDetail extends Component {
 
@@ -42,19 +43,21 @@ class ImageDetail extends Component {
 		var thumblink = this.state.data && this.state.data.thumblink;
 
 		return (
-			<div className="Details--Container">
-				<h2 className="Details__Title">{title}</h2>
-				<h6 className="Details__Score">{score}</h6>
-				<h6>{username}</h6>
-				<h6>{date}</h6>
-				<h4>{description}</h4>
-				<div className="Details__Image--Container">
-				<img className="Item__Image" src={`http://circuslabs.net/~michele.james/php/thumbnails/${thumblink}`} alt={this.state.data.description}/>
+
+			<div>
+				<Subheader name={title} />
+				<div className="Details--Container">
+					<h2 className="Details__Title">{title}</h2>
+					<h6 className="Details__Score">{score}</h6>
+					<h6>{username}</h6>
+					<h6>{date}</h6>
+					<h4>{description}</h4>
+					<div className="Details__Image--Container">
+					<img className="Item__Image" src={`http://circuslabs.net/~michele.james/php/thumbnails/${thumblink}`} alt={this.state.data.description}/>
+					</div>
 				</div>
 			</div>
-			
-			
-		)
+					)
 	}
 }
 

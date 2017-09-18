@@ -443,7 +443,7 @@ a {
 		margin-left: 2.5vw;
 	}
 
-	.Sidebar__nav--link.active {
+	/*.Sidebar__nav--link.active {
 		position: fixed;
 		background-color: rgba(252, 253, 255, 0.7);
 		margin: 0;
@@ -479,7 +479,7 @@ a {
 	    font-size: 6.5vw;
 	    padding-bottom: 2.5vw;
 	    text-shadow: 0 0 10px #fcfdff;
-	}
+	}*/
 	
 	.Gallery {
 		justify-content: flex-start;

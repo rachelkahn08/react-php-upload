@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import Subheader from './Subheader';
+import ImageCollection from './ImageCollection';
 
 export default class Landing extends Component {
 	render() {
 		return(
 			<div>
-				THIS IS THE LANDING PAGE GO SOMEWHERE ELSE BY CLICKING THE SIDEBAR STUFF YAY
+				<Subheader name="this is the landig page. we got pics." />
+				<div>
+					<ImageCollection />
+				</div>
 			</div>
 			);
 	}

@@ -43,6 +43,7 @@ export default class BrowseCategories extends Component {
         <div>
           
           <ul className="Gallery">
+          <Subheader name="BrowseCategories" />
            {this.state.data.map(item =>
                 <Link to={"/CategorySelect/" + item.category} ><GalleryItem  key={item.category} {...item} className="Container--Gallery__Item"/></Link>)}
           </ul>
