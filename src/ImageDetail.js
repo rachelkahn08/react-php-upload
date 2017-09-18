@@ -13,16 +13,15 @@ class ImageDetail extends Component {
 
 	componentDidMount() {
 
-		console.log(this.props.match);
 	    fetch('http://circuslabs.net/~michele.james/php/handle_fetch.php?type=getDetails&query=' + this.props.match.params.id,{
 
 	            method: 'GET',
 	            headers: {
 	            },
 	        })
-	        .then((response) => {
-	        	response.json();
-	        })
+	        .then(response => (
+	        	response.json()
+	        ))
 	        .then(json => (
 	           this.setState({
 	            data:json,
@@ -30,23 +29,27 @@ class ImageDetail extends Component {
 	          
 	        ));
 
-	        console.log(this.state.data.title);
-	    }
+	     }
 	
 
 	render() {
 
+		var title = this.state.data && this.state.data.title;
+		var score = this.state.data && this.state.data.score;
+		var username = this.state.data && this.state.data.username;
+		var date = this.state.data && this.state.data.date;
+		var description = this.state.data && this.state.data.description;
+		var thumblink = this.state.data && this.state.data.thumblink;
+
 		return (
-			<div className="Item__Details--Container">
-				<h2 className="Gallery__Item--Title">{this.state.data.title}</h2>
-				<h6 className="Item__Score">{this.state.data.score}</h6>
-				<h6>{this.state.data.username}</h6>
-				<h6>{this.state.data.date}</h6>
-				<h4>{this.state.data.description}</h4>
-				<div className="Item__Image--Container">
-					<div className="Image--Overflow-setup">
-						{<img className="Item__Image" src={`http://circuslabs.net/~michele.james/php/thumbnails/${this.state.data.thumblink}`} alt={this.state.data.description}/>}
-					</div>
+			<div className="Details--Container">
+				<h2 className="Details__Title">{title}</h2>
+				<h6 className="Details__Score">{score}</h6>
+				<h6>{username}</h6>
+				<h6>{date}</h6>
+				<h4>{description}</h4>
+				<div className="Details__Image--Container">
+				<img className="Item__Image" src={`http://circuslabs.net/~michele.james/php/thumbnails/${thumblink}`} alt={this.state.data.description}/>
 				</div>
 			</div>
 			

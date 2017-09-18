@@ -35,8 +35,6 @@ class Sidebar extends Component {
 					<div className="Sidebar__navlink-container">
 						<NavLink className="Sidebar__nav--link" to='/ImageCollection'>All</NavLink>
 						<NavLink className="Sidebar__nav--link" to='/BrowseCategories'>Browse Categories</NavLink>
-						{this.state.data.map((link, index) => 
-								<NavLink key={index + link.category} className="Sidebar__nav--link" to={`/cat:${link.category}`}>{link.category}</NavLink>)}
 					</div>
 				</nav>
 			</div>
@@ -45,6 +43,10 @@ class Sidebar extends Component {
 }
 
 export default Sidebar;
+
+
+// {this.state.data.map((link, index) => 
+// 								<NavLink key={index + link.category} className="Sidebar__nav--link" to={`/CatgorySelect/${link.category}`}>{link.category}</NavLink>)}
 
 
 
