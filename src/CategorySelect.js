@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 
 import {Link} from "react-router-dom";
 
+import GalleryItem from './GalleryItem';
+
 class CategorySelect extends Component {
 
   constructor (props) {
-    console.log('category select');
     super(props);
     this.state = {
       data: [],
@@ -36,26 +37,12 @@ class CategorySelect extends Component {
   render() {
 
     return (
-      <div className = "categories">
-      {this.state.data.map(category => (
-          <Link to={"/ImageDetail/" + category.id} ><div className="categories">
 
-          <h1>{this.props.match.params.name} pictures</h1>
+        <ul className="Gallery">
+           {this.state.data.map(item =>
+                <Link to={"/ImageDetail/" + item.id} ><GalleryItem  key={item.id} {...item} className="Container--Gallery__Item"/></Link>)}
+        </ul>
 
-            <Link to={`/categories/${category.category}`}>
-              {category.category}<br/>
-            </Link>
-
-            <img className="categoryImage" src={"http://circuslabs.net/~michele.james/php/thumbnails/"+category.imagelink}/><br/>
-            {category.title}<br/>
-            {category.date}<br/>
-
-            <br/>
-          </div></Link>
-        ))}
-
-
-      </div>
 
     );
   }

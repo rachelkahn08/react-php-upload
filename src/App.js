@@ -31,7 +31,7 @@ class App extends Component {
               <Route path="/" exact component={ Landing } />
               <Route path="/ImageCollection" component={ImageCollection} />
                <Route path="/BrowseCategories" component={BrowseCategories} />
-              <Route path="/imageDetail/:id" component={ ImageDetail } />
+              <Route path="/ImageDetail/:id" component={ ImageDetail } />
               <Route path="/CategorySelect/:category" component={ CategorySelect } />
             </Switch>
         </div>
