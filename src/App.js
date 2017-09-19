@@ -17,26 +17,23 @@ class App extends Component {
    
     return (
       <BrowserRouter>
+        <div className="App">
+      
+          <Header />
+          
+          <Sidebar />
 
+          <div className="App__body">
+              <Switch>
+                <Route path="/" exact component={ Landing } />
+                <Route path="/ImageCollection" component={ImageCollection} />
+                 <Route path="/BrowseCategories" component={BrowseCategories} />
+                <Route path="/ImageDetail/:id" component={ ImageDetail } />
+                <Route path="/CategorySelect/:category" component={ CategorySelect } />
+              </Switch>
+          </div>
 
-
-      <div className="App">
-       
-        <Header />
-        
-        <Sidebar />
-
-        <div className="App__body">
-            <Switch>
-              <Route path="/" exact component={ Landing } />
-              <Route path="/ImageCollection" component={ImageCollection} />
-               <Route path="/BrowseCategories" component={BrowseCategories} />
-              <Route path="/ImageDetail/:id" component={ ImageDetail } />
-              <Route path="/CategorySelect/:category" component={ CategorySelect } />
-            </Switch>
         </div>
-
-      </div>
       </BrowserRouter>
       
     );

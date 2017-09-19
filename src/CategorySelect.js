@@ -40,7 +40,7 @@ class CategorySelect extends Component {
     return (
 
         <ul className="Gallery">
-        <Subheader name={this.state.data.category} />
+        <Subheader name={`Category: {this.state.data.category}`}/>
            {this.state.data.map(item =>
                 <Link to={"/ImageDetail/" + item.id} ><GalleryItem  key={item.id} {...item} className="Container--Gallery__Item"/></Link>)}
         </ul>

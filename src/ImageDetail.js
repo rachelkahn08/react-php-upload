@@ -45,15 +45,22 @@ class ImageDetail extends Component {
 		return (
 
 			<div>
-				<Subheader name={title} />
-				<div className="Details--Container">
-					<h2 className="Details__Title">{title}</h2>
-					<h6 className="Details__Score">{score}</h6>
-					<h6>{username}</h6>
-					<h6>{date}</h6>
-					<h4>{description}</h4>
-					<div className="Details__Image--Container">
-					<img className="Item__Image" src={`http://circuslabs.net/~michele.james/php/thumbnails/${thumblink}`} alt={this.state.data.description}/>
+				<Subheader name="go back" />
+				<div className="Image__Details--Container">
+					<img className="Image__Details--Image" src={`http://circuslabs.net/~michele.james/php/thumbnails/${thumblink}`} alt={this.state.data.description}/>					
+					<div className="Image__Details--Details">
+						<div className="Image__h1--Container">
+							<div className="Details__Title">{title}</div>
+							<div className="Details__Score">{score}</div>
+						</div>
+						<div className="Details--Container--details">
+							<div className="Image__h2--Container">
+								<div className="Details__Username">Submitted by:</div>
+								<div className="Details__Username--user">{username}</div>
+							</div>							
+							<div className="Details__Description">{description}</div>
+							<div>{date}</div>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -64,9 +71,5 @@ class ImageDetail extends Component {
 export default ImageDetail;
 
 
-//
-				//
-
-//<GalleryItem  key={this.state.data.id} {...this.state.data} className="Container--Gallery__Item"/>
 
 

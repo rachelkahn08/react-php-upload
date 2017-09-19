@@ -136,6 +136,7 @@ a {
 	top: 1vw;
 	z-index: 3;
 	width: 97.5vw;
+	margin-left: 1.1vw;
 }
 
 .Sidebar__nav {
@@ -155,7 +156,6 @@ a {
 .Subheader {
 	position: fixed;
 	z-index: 5;
-	margin-top: 4.5vw;
 	left: 50%;
 	transform: translate(-50%);
 	font-size: 5vw;
@@ -165,6 +165,7 @@ a {
 	text-align: center;
 	font-weight: 500;
 	color: #3D0A49;
+	top: 39vw;
 }
 
 .Sidebar__navlink-container {
@@ -172,8 +173,9 @@ a {
 	height: 100%;
 	display: flex;
 	justify-content: flex-start;
-	align-items: center;
+	align-items: flex-end;
 	overflow-x: scroll;
+	padding-bottom: 2vw;
 }
 
 .Sidebar__nav--link {
@@ -182,7 +184,7 @@ a {
 	font-weight: 200;
 	box-shadow: 0px 0px 5px #A6AEC1;
 	line-height: 6.8vw;
-	width: 17vw;
+	padding:  0vw 2vw 0vw 2vw;
 	min-width: 19vw;
 	margin-left: 1vw;
 	margin-right: 1vw;
@@ -205,7 +207,7 @@ a {
 					0.4px 0 0 #1d0023, 
 		 			0 0.4px 0 #1d0023, 
 		 			0 -0.4px 0 #1d0023,
-		 			0 -0.4px 0 #1d0023;		 			
+		 			0 -0.4px 0 #1d0023;
 }
 
 .Gallery {
@@ -280,6 +282,77 @@ a {
 }
 
 
+.Image__Details--Container {
+	width: 100%;
+	margin-top: 3vw;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 0 1vw #2d2030;;
+}
+
+.Image__Details--Image {
+	width: 100%;
+	min-height: 20vw;
+}
+
+.Image__h1--Container {
+	font-size: 9vw;
+	text-transform: uppercase;
+	flex-direction: row;
+	align-items: center;
+	flex-wrap: nowrap;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 3vw;
+}
+
+.Image__Details--Details {
+	padding: 3vw;
+	background-color: #FCFDFF;
+}
+
+.Details__Title {
+	margin: 0;
+}
+
+.Details--Container--details {
+	display: flex;
+	flex-wrap: wrap;
+
+}
+
+.Image__h2--Container {
+	width: 100%;
+	display: flex;
+	
+}
+
+.Details__Score {
+	font-size: 6vw;
+	margin: 0;
+	border: 1px solid #2d2030;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1vw;
+}
+
+.Details__Username {
+	font-size: 4vw;
+	text-transform: uppercase;
+	font-style: italic;
+	padding-top: 0.384vw;
+}
+
+.Details_Username--user {
+	text-transform: capitalize;
+	font-style: initial;
+}
+
+.Details__Description {
+	width: 100%;
+}
+
 @media screen and (min-width: 600px) {
 	.App {
 		display: flex;
@@ -309,20 +382,28 @@ a {
 	}
 
 	.Sidebar {
-		height: 24vw;
-		margin: 1.25vw;
+		height: 16vw;
+		margin: 0 0 0 1.3vw;
 		padding: 1.2vw;
 		bottom: 0;
+		border-width: 1.3vw;
 	}
 
 	.Subheader {
+		top: initial;
 		font-size: 4.5vw;
-		bottom: 16.8vw;
+		bottom: 9.8vw;
 	}	
 
 	.Sidebar__nav--link {
-		height: 7.5vw;
-		font-size: 3.5vw;
+		height: 5.5vw;
+		font-size: 3vw;
+		line-height: 5vw;
+		min-width: 13vw;
+	}
+
+	.Sidebar__navlink-container{
+		padding-bottom: 0.3vw;
 	}
 
 	.Gallery {
@@ -422,11 +503,13 @@ a {
 		font-size: 4vw;
 		margin-bottom: 5vw;
 		transform: none;
-		left: 14.7vw;
-		padding-left: 0.5vw;
-		bottom: 64.4vw;
+		left: 9vw;
+		padding-left: 3vw;
+		bottom: initial;
+		top: 9.5vw;
+		box-shadow: 0px 0px 1vw rgba(61, 10, 73, 0.2);
 		background-color: rgba(252, 253, 255, 0.7);
-		width: 85.3vw;
+		width: 91vw;
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;
@@ -454,6 +537,7 @@ a {
 	}
 
 	.Sidebar__nav--link {
+		height: 5.5vw;
 		justify-content: flex-start;
 		margin-left: 1.5vw;
 		padding: 1.5vw;
@@ -462,7 +546,7 @@ a {
 		min-height: 5.5vw;
 	    font-size: 2.8vw;
 	    width: 15vw;
-	    line-height: 2.4vw;
+	    line-height: 2vw;
     	text-align: left;
     	z-index: 4;
     	margin-left: 0;
@@ -474,6 +558,10 @@ a {
 		box-shadow: 0px 0px 10px #A6AEC1;
 		background-color: rgba(237, 237, 242, 0.7);
 		margin-left: 2.5vw;
+	}
+
+	.Sidebar__nav--link.active {
+		display: none;
 	}
 
 	/*.Sidebar__nav--link.active {
@@ -550,6 +638,12 @@ a {
 	.Item__Image {
 		line-height: 10vw;
 	}
+
+	.Image__Details--Container {
+	    width: 60vw;
+	    margin-left: 6.7vw;
+        margin-top: 21vw;
+	}
 }
 
 @media screen and (min-width: 1200px) {
@@ -560,6 +654,14 @@ a {
 		left: 12vw;
 	}
 	
+	.Subheader {
+		font-size: 3.5vw;
+		height: 6.2vw;
+		font-size: 3.3vw;
+		left: 14vw;
+	}
+
+
 	/*.Sidebar__nav--link.active {
 		height: 6.2vw;
 		font-size: 5.5vw;
@@ -581,7 +683,17 @@ a {
 	}
 	
 	.Sidebar__navlink-container {
-		margin-top: 18vw;
+		margin-top: 16vw;
+		margin-left: -2.6vw;
+	}
+
+	.Gallery__Item--Title {
+		font-size: 1.8vw;
+	}
+
+	.Item__Score {
+		font-size: 1.8vw;
+		padding: 0.05vw 0.7vw 0.25vw 0.7vw;
 	}
 
 	.Sidebar__nav--link {
@@ -592,6 +704,11 @@ a {
 		min-height: 4vw;
 	}
 	
+	.Image__Details--Container {
+       width: 50vw;
+	    margin-left: 14.5vw;
+	    margin-top: 18vw;
+	}
 
 }
 
