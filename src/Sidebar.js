@@ -32,6 +32,7 @@ class Sidebar extends Component {
 			<div className="Sidebar">
 				<nav className="Sidebar__nav">
 					<div className="Sidebar__navlink-container">
+						<NavLink className="Sidebar__nav--link" to='/' exact >Home</NavLink>
 						<NavLink className="Sidebar__nav--link" to='/ImageCollection'>All</NavLink>
 						<NavLink className="Sidebar__nav--link" to='/BrowseCategories'>Browse Categories</NavLink>
 					</div>

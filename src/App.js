@@ -25,7 +25,7 @@ class App extends Component {
 
           <div className="App__body">
               <Switch>
-                <Route path="/" exact component={ Landing } />
+                <Route path="/" exact component={ImageCollection} />
                 <Route path="/ImageCollection" component={ImageCollection} />
                  <Route path="/BrowseCategories" component={BrowseCategories} />
                 <Route path="/ImageDetail/:id" component={ ImageDetail } />
